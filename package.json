@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"build:release": "vite build --mode release && tauri build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -13,7 +14,7 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"tauri": "tauri",
-		"hyprarchlinux_dev": "WEBKIT_DISABLE_COMPOSITING_MODE=1 GDK_BACKEND=x11 npm run tauri dev"
+		"dev:arch": "WEBKIT_DISABLE_COMPOSITING_MODE=1 GDK_BACKEND=x11 npm run tauri dev"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.3",
@@ -39,5 +40,8 @@
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.57.0",
 		"vite": "^7.3.1"
+	},
+	"dependencies": {
+		"@sveltejs/adapter-static": "^3.0.10"
 	}
 }
